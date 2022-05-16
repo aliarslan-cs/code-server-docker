@@ -1,0 +1,12 @@
+version: '3'
+services:
+
+  # VSCode App
+  code:
+    image: coder
+    env_file: codeserver.env
+    volumes:
+      - "./docker-data/codeserver:/vscode/data"
+      - "./docker-data/repos:/vscode/repos"
+    ports:
+      - "8080:8080"
